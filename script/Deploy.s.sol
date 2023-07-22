@@ -19,6 +19,7 @@ contract DeployMultiChainIndexFund is BaseScript {
         IIndexToken[] memory tokens = new IIndexToken[](1);
 
         tokens[0] = new UniswapTokenAdapter(IERC20(address(0x326C977E6efc84E512bB9C30f76E30c160eD06FB)));
+        // tokens[0] = IIndexToken(address(0x326C977E6efc84E512bB9C30f76E30c160eD06FB));
 
         // Define corresponding target weights
         uint256[] memory targetWeights = new uint256[](1);

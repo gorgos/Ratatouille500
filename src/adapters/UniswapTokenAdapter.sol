@@ -20,6 +20,7 @@ contract UniswapTokenAdapter is IIndexToken {
     constructor(IERC20 _underlying) {
         underlying = _underlying;
         underlying.approve(address(uniswapRouter), type(uint256).max);
+        IERC20(WETH9).approve(address(uniswapRouter), type(uint256).max);
     }
 
     function getUnderlying() external view returns (IERC20) {

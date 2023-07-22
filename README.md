@@ -24,16 +24,16 @@ or in our case, crypto assets from various blockchains.
 
 Our fund integrates with the following chains:
 
-- Ethereum Goerli
-- Filecoin
-- Linea
-- Polygon ZK
-- Celo
-- zkSync
-- Neon EVM
-- Mantle
-- Gnosis Chain
-- Zeta Chain
+- Ethereum Goerli: `0x478C2D2698F162C55E064C8C3B1f4F9E2Abb1181`
+- Filecoin Testnet: <TODO> (deployment failed for unknown reasons)
+- Linea Testnet: <TODO> (deployment failed for unknown reasons)
+- Polygon ZK Testnet: `0xe089e1B4DFce9f384a91a4a084C5ade14b932761`
+- Celo Testnet: `0xCe92006F9C121c2000258224EC6AF5B1Db4c6189`
+- zkSync Testnet: <TODO> (deployment failed for unknown reasons)
+- Neon EVM Testnet: <TODO> (deployment failed for unknown reasons)
+- Mantle Testnet: <TODO> (deployment failed for unknown reasons)
+- Gnosis Chain Testnet: `0x9108Ab1bb7D054a3C1Cd62329668536f925397e5`
+- Zeta Chain Testnet: <TODO> (deployment failed for unknown reasons)
 
 ## 🚀 Features
 
