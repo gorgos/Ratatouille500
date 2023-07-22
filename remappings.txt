@@ -1,2 +1,10 @@
 @prb/test/=lib/prb-test/src/
 forge-std/=lib/forge-std/src/
+@openzeppelin/=lib/openzeppelin-contracts/
+@uniswap/v2-periphery/=lib/v2-periphery
+@uniswap-v3-periphery/=lib/uniswap-v3-periphery
+@uniswap/v3-core/=lib/v3-core
+@axelar-network/axelar-gmp-sdk-solidity/=lib/axelar-gmp-sdk-solidity
+@chainlink/contracts/=lib/chainlink/contracts/src/v0.8
+@zetachain/toolkit/=lib/toolkit
+@zetachain/protocol-contracts/=lib/protocol-contracts
