@@ -1,10 +1,10 @@
 {
-  "name": "@prb/foundry-template",
-  "description": "Foundry-based template for developing Solidity smart contracts",
+  "name": "ratatouille500",
+  "description": "The Ratatouille500 fund captures the value of top cryptocurrencies and projects across several different blockchains, aiming to provide a balanced, diversified portfolio in the ever-growing, ever-changing crypto ecosystem.",
   "version": "1.0.0",
   "author": {
-    "name": "Paul Razvan Berg",
-    "url": "https://github.com/PaulRBerg"
+    "name": "Markus Waas",
+    "url": "https://github.com/gorgos"
   },
   "devDependencies": {
     "prettier": "^3.0.0",
