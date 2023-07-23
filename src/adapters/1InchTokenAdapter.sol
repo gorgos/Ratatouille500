@@ -11,7 +11,7 @@ interface IUniswapRouter is ISwapRouter {
     function refundETH() external payable;
 }
 
-contract UniswapTokenAdapter is IIndexToken {
+contract OneInchTokenAdapter is IIndexToken {
     address private constant WETH9 = 0xd0A1E359811322d97991E03f863a0C30C2cF029C;
 
     IAggregationRouterV5 private immutable aggregationRouter;
@@ -30,14 +30,11 @@ contract UniswapTokenAdapter is IIndexToken {
     function buy() external payable {
         require(msg.value > 0, "Must pass non 0 ETH amount");
 
-        uint256 deadline = block.timestamp + 15;
         address tokenIn = WETH9;
         address tokenOut = address(underlying);
-        uint24 fee = 3000;
         address recipient = msg.sender;
         uint256 amountIn = msg.value;
         uint256 amountOutMinimum = 1;
-        uint160 sqrtPriceLimitX96 = 0;
 
         aggregationRouter.swap(
             IAggregationExecutor(address(this)),
@@ -45,23 +42,16 @@ contract UniswapTokenAdapter is IIndexToken {
                 IERC20(tokenIn), IERC20(tokenOut), payable(recipient), payable(recipient), amountIn, amountOutMinimum, 0
             ),
             "",
-            abi.encode(
-                ISwapRouter.ExactInputSingleParams(
-                    tokenIn, tokenOut, fee, recipient, deadline, amountIn, amountOutMinimum, sqrtPriceLimitX96
-                )
-            )
+            ""
         );
     }
 
     function sell(uint256 tokenAmount) external payable {
-        uint256 deadline = block.timestamp + 15;
         address tokenIn = address(underlying);
         address tokenOut = WETH9;
-        uint24 fee = 3000;
         address recipient = msg.sender;
         uint256 amountIn = tokenAmount;
         uint256 amountOutMinimum = 1;
-        uint160 sqrtPriceLimitX96 = 0;
 
         aggregationRouter.swap(
             IAggregationExecutor(address(this)),
@@ -69,11 +59,7 @@ contract UniswapTokenAdapter is IIndexToken {
                 IERC20(tokenIn), IERC20(tokenOut), payable(recipient), payable(recipient), amountIn, amountOutMinimum, 0
             ),
             "",
-            abi.encode(
-                ISwapRouter.ExactInputSingleParams(
-                    tokenIn, tokenOut, fee, recipient, deadline, amountIn, amountOutMinimum, sqrtPriceLimitX96
-                )
-            )
+            ""
         );
     }
 }
